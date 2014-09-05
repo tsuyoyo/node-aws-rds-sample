@@ -1,0 +1,39 @@
+/* ------------------------------- */
+/* Example to setup MySQL database */
+/*                                 */
+/* (How to use this script)        */
+/* $ mysql -h <HOST> -P <PORT> -u <USER> -p <DBNAME>  < setupContentsDB */
+/* ------------------------------- */
+
+drop database if exists ContentsDB;
+create database ContentsDB;
+
+use ContentsDB;
+
+/* Lastupdate is UNIX_TIMESTAMP */
+create table RECIPE (
+  id         TINYTEXT,
+  s3key      TEXT,
+  lastupdate INT(10)
+);
+
+create table MUSIC (
+  recipeId   TINYTEXT,
+  title      TINYTEXT,
+  s3key      TEXT,
+  lastupdate INT(10)
+);
+
+/* Sample data 01 */
+insert into
+  RECIPE(id, s3key, lastupdate)
+  value('SampleRecipe01',
+        'recipe/recipeSample01.json',
+        unix_timestamp(now());
+
+insert into
+  MUSIC(recipeId, title, s3key, lastupdate)
+  value('SampleRecipe01',
+        'Recipe01-bgm01',
+        'music/bgmSample01.mp3',
+        unix_timestamp(now());

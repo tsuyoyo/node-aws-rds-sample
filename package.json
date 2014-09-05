@@ -1,0 +1,18 @@
+{
+  "name": "140905_RDB_investigation",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4.8.8",
+    "mysql": "~2.4.3"
+  },
+  "devDependencies": {
+    "mysql": "^2.4.3"
+  },
+  "scripts": {
+    "test": "bash run.sh"
+  },
+  "author": "",
+  "license": "ISC"
+}
